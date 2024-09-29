@@ -38,11 +38,12 @@ square_size = 20
 def init_vars():
     global head_pos, snake_body, food_pos, food_spawn, score, direction
     direction = "RIGHT"
-    head_pos = [120, 60]
-    snake_body = [[120, 60]]
+    head_pos = [720, 480]
+    snake_body = [[720, 480]]
     food_pos = [random.randrange(1, (frame_size_x // square_size))* square_size,
                 random.randrange(1,(frame_size_y // square_size)) * square_size]
     food_spawn = True
+    
     score = 0
     
 init_vars()
