@@ -1,6 +1,6 @@
 import pygame, sys, time, random 
 
-speed = 15
+
 
 # windows sizing
 frame_size_x = 720
@@ -32,14 +32,15 @@ fps_controller = pygame.time.Clock()
 # game effect 
 eat_sound = pygame.mixer.Sound('./eating_sound.wav')
 
-# snake square size 
+# snake setting
 square_size = 20
+snake_speed = 15
 
 def init_vars():
     global head_pos, snake_body, food_pos, food_spawn, score, direction
     direction = "RIGHT"
-    head_pos = [720, 480]
-    snake_body = [[720, 480]]
+    head_pos = [120, 60]
+    snake_body = [[120, 60]]
     food_pos = [random.randrange(1, (frame_size_x // square_size))* square_size,
                 random.randrange(1,(frame_size_y // square_size)) * square_size]
     food_spawn = True
@@ -164,4 +165,4 @@ while True :
             
     show_score(1, white, 'consolas', 20)
     pygame.display.update()
-    fps_controller.tick(speed)
+    fps_controller.tick(snake_speed)
